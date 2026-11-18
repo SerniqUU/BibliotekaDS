@@ -24,17 +24,15 @@
 
   --font-secondary-light : rgb(37, 37, 37);
   --font-secondary-dark : rgb(173, 173, 173);
+}
 
-  color-scheme: dark;
-
-  :root[data-theme="light"] {
+:root[data-theme="light"] {
     color-scheme: light;
   }
 
   :root[data-theme="dark"] {
     color-scheme: dark;
   }
-}
 
 html, body{margin: 0; padding: 0; font-family: var(--font); background-image: light-dark(url("./assets/back-light.png"), url("./assets/back-dark.png")); background-repeat: no-repeat; background-size: cover;}
 
