@@ -24,14 +24,16 @@
 
   --font-secondary-light : rgb(37, 37, 37);
   --font-secondary-dark : rgb(173, 173, 173);
+
+  color-scheme: light dark;
 }
 
-html, body{margin: 0; padding: 0; font-family: var(--font); background-image: light-dark(url("assets/back-light.png"), url("assets/back-dark.png")); background-repeat: no-repeat; background-size: cover;}
+html, body{margin: 0; padding: 0; font-family: var(--font); background-image: light-dark(url("./assets/back-light.png"), url("./assets/back-dark.png")); background-repeat: no-repeat; background-size: cover;}
 
 @font-face 
 {
   font-family: "Sackers Gothic Light AT Regular";
-  src: url("assets/sglar.otf") format("opentype");
+  src: url("./assets/sglar.otf") format("opentype");
 }
 
 /*SECTIONS*/
