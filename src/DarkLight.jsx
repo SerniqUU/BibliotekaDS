@@ -15,7 +15,7 @@ export function DarkLight() {
       id="lightDarkSwitch"
       onClick={() => setIsDark(prev => !prev)}
     >
-      {isDark ? 'Switch to Light' : 'Switch to Dark'}
+      {isDark ? 'Ustaw jasny motyw' : 'Ustaw ciemny motyw'}
     </button>
   );
 }
