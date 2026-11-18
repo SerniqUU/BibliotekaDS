@@ -1,0 +1,184 @@
+:root
+{
+  /*Background Colors*/
+  --background-primary : rgb(1, 0, 27);
+  --background-secondary : rgb(1, 0, 10);
+
+  --background-primary-light: rgb(224, 224, 250);
+  --background-secondary-light: rgb(183, 179, 224);
+
+  /*Hero Text Variables*/
+  --text-hero1 : rgb(15, 9, 83);
+  --text-hero2 : rgb(37, 31, 100);
+
+  /*Buttons*/
+  --button-light : rgb(173, 171, 229);
+  --button-dark : rgb(29, 29, 60);
+  --button-light-border : rgb(144, 135, 210);
+  --button-dark-border : rgb(20, 18, 41);
+
+  /*General Font*/
+  --font : "Sackers Gothic Light AT Regular";
+  --font-primary-light : rgb(0, 0, 0);
+  --font-primary-dark : rgb(255, 255, 255);
+
+  --font-secondary-light : rgb(37, 37, 37);
+  --font-secondary-dark : rgb(173, 173, 173);
+}
+
+html, body{margin: 0; padding: 0; font-family: var(--font); background-image: light-dark(url("assets/back-light.png"), url("assets/back-dark.png")); background-repeat: no-repeat; background-size: cover;}
+
+@font-face 
+{
+  font-family: "Sackers Gothic Light AT Regular";
+  src: url("assets/sglar.otf") format("opentype");
+}
+
+/*SECTIONS*/
+  /*Hero*/
+#heroSection
+{
+  height: 100vh;
+  width: 100%;
+  border-bottom: 10px solid light-dark(var(--background-secondary-light), var(--background-secondary));
+  background: light-dark(
+  linear-gradient(
+    75deg,
+    var(--background-primary-light),
+    var(--background-secondary-light)
+  ),
+  linear-gradient(
+    75deg,
+    var(--background-primary),
+    var(--background-secondary)
+  )
+  );
+}
+#heroText
+{
+  background: linear-gradient(
+    75deg,
+    var(--text-hero1),
+    var(--text-hero2)
+  );
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  font-size: 55px;
+  text-align: center;
+  position: relative;
+  top:40vh;
+  @media(max-width:768px){font-size: 35px;}
+}
+#heroSubText
+{
+  position: relative;
+  top:60vh;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  @media(max-width:768px){font-size: 10px;}
+}
+#lightDarkSwitch
+{
+  width: 150px;
+  height: 40px;
+  background: light-dark(var(--button-light), var(--button-dark));
+  border-radius: 25px 25px 25px 25px;
+  border: 5px solid light-dark(var(--button-light-border), var(--button-dark-border));
+  transition: 0.2s ease-in-out box-shadow;
+}
+#lightDarkSwitch:hover
+{
+  box-shadow: light-dark(rgb(25, 0, 255), rgb(0, 221, 255)) 0px 0px 10px 0px;
+}
+
+  /*Main Section*/
+#mainSection
+{
+  background: light-dark(var(--background-primary-light), var(--background-primary));
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  min-height: 100vh;
+  margin: auto;
+}
+
+  /*Item Cards*/
+.itemCard
+{
+  width: 45%;
+  max-width: 600px;
+  min-height: 275px;
+  height: fit-content;
+  margin: auto;
+  padding: 5px;
+  margin-top: 15px;
+  background: light-dark(var(--background-secondary-light), var(--background-secondary));
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotateX(10deg) rotateY(10deg);
+  overflow: hidden;
+  @media(max-width:768px){font-size: 12px; overflow: scroll; height: 275px;}
+}
+
+/*GENERAL*/
+  /*Text*/
+.primaryText{color: light-dark(var(--font-primary-light), var(--font-primary-dark))}
+.secondaryText{color: light-dark(var(--font-secondary-light), var(--font-secondary-dark))}
+.itemPrimary{color: var(--font-primary-dark)}
+.itemSecondary{color: var(--font-secondary-dark)}
+
+input
+{
+  font-family: var(--font);
+  margin: auto;
+  width: 99.8%;
+  height: 30px;
+  background-color: light-dark(var(--button-light), var(--button-dark));
+  border: light-dark(var(--button-light-border), var(--button-dark-border));
+}
+
+  /*Gradient Decor*/
+.gradientDecor
+{
+  pointer-events: none;
+  filter: blur(100px);
+  border-radius: 999px;
+}
+.gD1
+{
+  position:fixed;
+  left: 10vw;
+  top: 0px;
+  width: 100px;
+  height: 100px;
+  background: light-dark(
+    rgb(8, 0, 255),
+    rgb(181, 135, 210)
+  );
+}
+.gD2
+{
+  position:fixed;
+  left: 35vw;
+  top: 60vh;
+  width: 100px;
+  height: 100px;
+  background: light-dark(
+    rgb(47, 0, 255),
+    rgb(181, 135, 210)
+  );
+}
+.gD3
+{
+  position:fixed;
+  left: 80vw;
+  top: 25vh;
+  width: 100px;
+  height: 100px;
+  background: light-dark(
+    rgb(17, 0, 255),
+    rgb(181, 135, 210)
+  );
+}
